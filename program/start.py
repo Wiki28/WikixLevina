@@ -113,7 +113,7 @@ async def _human_time_duration(seconds):
 
 
 @Client.on_message(
-    command(["alive", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["malive", f"malive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 @check_blacklist()
 async def alive(c: Client, message: Message):
