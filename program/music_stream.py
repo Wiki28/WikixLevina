@@ -145,7 +145,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 title = songname
                 userid = m.from_user.id
                 image = await thumb(thumbnail, title, userid, ctitle)
-                await suhu.edit("🔄 Joining Group Call...")
+                await suhu.edit("🔄 Bergabung dengan Obrolan Suara Group...")
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
                 await calls.join_group_call(
@@ -182,7 +182,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         )
 
 
-@Client.on_message(command(["play", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["play", "pl", f"play@{BOT_USERNAME}"]) & other_filters)
 @check_blacklist()
 @require_admin(permissions=["can_manage_voice_chats", "can_delete_messages", "can_invite_users"], self=True)
 async def audio_stream(c: Client, m: Message):
@@ -276,7 +276,7 @@ async def audio_stream(c: Client, m: Message):
                             remove_if_exists(image)
                         else:
                             try:
-                                await suhu.edit("🔄 Joining Group Call...")
+                                await suhu.edit("🔄 Bergabung dengan Obrolan Suara Group...")
                                 await music_on(chat_id)
                                 await add_active_chat(chat_id)
                                 await calls.join_group_call(
@@ -351,7 +351,7 @@ async def audio_stream(c: Client, m: Message):
                         remove_if_exists(image)
                     else:
                         try:
-                            await suhu.edit("🔄 Joining Group Call...")
+                            await suhu.edit("🔄 Bergabung dengan Obrolan Suara Group...")
                             await music_on(chat_id)
                             await add_active_chat(chat_id)
                             await calls.join_group_call(
@@ -460,7 +460,7 @@ async def live_music_stream(c: Client, m: Message):
                     )
                 else:
                     try:
-                        await msg.edit_text("🔄 Joining Group Call...")
+                        await msg.edit_text("🔄 Bergabung dengan Obrolan Suara Group...")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
@@ -511,7 +511,7 @@ async def live_music_stream(c: Client, m: Message):
                     remove_if_exists(image)
                 else:
                     try:
-                        await msg.edit_text("🔄 Joining Group Call...")
+                        await msg.edit_text("🔄 Bergabung dengan Obrolan Suara Group...")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
