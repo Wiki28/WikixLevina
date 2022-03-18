@@ -61,7 +61,7 @@ async def update_admin(client, message: Message):
 
 
 @Client.on_message(
-    command(["stop", f"stop@{BOT_USERNAME}", "end", f"end@{BOT_USERNAME}", "vstop"])
+    command(["stop", f"stop@{BOT_USERNAME}", "end", "en", f"end@{BOT_USERNAME}", "vstop"])
     & other_filters
 )
 @authorized_users_only
@@ -73,12 +73,12 @@ async def stop(client, m: Message):
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await m.reply_text("✅ The userbot has disconnected from the video chat.")
+            await m.reply_text("✅ Asisten telah terputus dari Obrolan Suara Group.")
         except Exception as e:
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("❌ **Tidak ada yang di putar**")
 
 
 @Client.on_message(
